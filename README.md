@@ -2311,16 +2311,13 @@ Notes for Android:
 
 #### Parameters
 - {Function} successCallback - The callback which will be called when operation is successful.
-The function is passed a single string parameter indicating whether access to the microphone was granted or denied:
-`cordova.plugins.diagnostic.permissionStatus.GRANTED` or `cordova.plugins.diagnostic.permissionStatus.DENIED`
+The function is passed a single string parameter indicating permission status at the time of request.
 - {Function} errorCallback - The callback which will be called when an error occurs. The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.requestMicrophoneAuthorization(function(status){
-       if(status === cordova.plugins.diagnostic.permissionStatus.GRANTED){
-           console.log("Microphone use is authorized");
-       }
+    cordova.plugins.diagnostic.requestMicrophoneAuthorization(function(){
+        console.log("Microphone authorization requested");
     }, function(error){
         console.error(error);
     });
